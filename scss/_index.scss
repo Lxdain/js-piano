@@ -1,0 +1,110 @@
+@import "colors";
+@import "fonts";
+@import "resets";
+
+// WRITE BELOW
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: linear-gradient($bgcolor, $bgcolor2);
+  .wrapper {
+    width: 780px;
+    border-radius: 20px;
+    padding: 35px 40px;
+    background: rgb(20, 20, 20);
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      color: white;
+      #title {
+        font-family: $cursive;
+        font-weight: 500;
+        font-size: 2rem;
+      }
+      .column {
+        display: flex;
+        align-items: center;
+        span {
+          font-weight: 500;
+          font-size: 1.2rem;
+          margin-right: 20px;
+        }
+      }
+      .volume-slider > input {
+        outline: none;
+        accent-color: white;
+        cursor: pointer;
+      }
+      .keys-checkbox > input {
+        outline: none;
+        position: relative;
+        appearance: none;
+        cursor: pointer;
+        width: 60px;
+        height: 30px;
+        background-color: gray;
+        border-radius: 30px;
+        &::before {
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            border-radius: inherit;
+            background: lightgray;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+        &:checked::before {
+            left: 35px;
+            background: white;
+        }
+      }
+    }
+    .piano-keys {
+        display: flex;
+        margin-top: 40px;
+        .key {
+            list-style: none;
+            color: whitesmoke;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            user-select: none;
+            &.white {
+                width: 70px;
+                height: 230px;
+                border: 1px solid darkgray;
+                border-radius: 5px;
+                background: linear-gradient(whitesmoke 97%, lightgray 3%);
+                &:active {
+                    background: linear-gradient(lightgray 97%, darkgray 3%);
+                }
+            }
+            &.black {
+                z-index: 2;
+                width: 40px;
+                height: 140px;
+                margin: 0 -20px 0 -20px;
+                border-radius: 0px 0px 5px 5px;
+                background: linear-gradient($pianoblack 97%, black 3%);
+                &:active {
+                    background: linear-gradient(rgb(20, 20, 20) 97%, black 3%);
+                }
+            }
+        }
+        span {
+            color: darkgray;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    }
+  }
+}

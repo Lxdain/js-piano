@@ -94,19 +94,22 @@ body .wrapper .piano-keys .key.white {
   border-radius: 5px;
   background: linear-gradient(whitesmoke 97%, lightgray 3%);
 }
-body .wrapper .piano-keys .key.white:active {
+body .wrapper .piano-keys .key.white.active {
   background: linear-gradient(lightgray 97%, darkgray 3%);
 }
 body .wrapper .piano-keys .key.black {
-  z-index: 2;
+  z-index: 99;
   width: 40px;
   height: 140px;
   margin: 0 -20px 0 -20px;
   border-radius: 0px 0px 5px 5px;
   background: linear-gradient(rgb(35, 35, 35) 97%, black 3%);
 }
-body .wrapper .piano-keys .key.black:active {
+body .wrapper .piano-keys .key.black.active {
   background: linear-gradient(rgb(20, 20, 20) 97%, black 3%);
+}
+body .wrapper .piano-keys .key.hide span {
+  display: none;
 }
 body .wrapper .piano-keys span {
   color: darkgray;
